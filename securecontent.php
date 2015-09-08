@@ -108,7 +108,7 @@ $playable_times =  $row["playable_times"];
 	<tr>
 		<td colspan="2">
 			<div id="invalid_datetime_format_message"><small>Invalid date or time.</small></div>
-			<input type="submit" name="submitted" value="submit" class="submit_preferences"/>
+			<input type="submit" name="submitted" value="Save Changes" class="submit_preferences"/>
 		</td>
 	</tr>
 </table>

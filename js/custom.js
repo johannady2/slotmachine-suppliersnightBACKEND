@@ -91,7 +91,7 @@ function onPageload()
 	function ()
 	{
 		$('#playableduration-reloadingdiv').load('reload_open_time_duration.php').fadeIn('fast');
-	}, 10000);
+	}, 500);
 	
 	addZeroOnBeginningOfTime();
 	alwaysUseCurrentDateCheckedOrNot();
@@ -101,9 +101,36 @@ function addZeroOnBeginningOfTime()
 {
 	if($('#store_time_start').length > 0 && $('#store_time_end').length > 0)//ADD '0' to example; 3:22:00 to make it 03:22:00 which is what's valid
 	{
-		   //var myArray = myString.split(' ');
-		//$('#store_time_start').val()
-		/*START*/
+		 var starttimeSplitArray = $('#store_time_start').val().split(':');
+		 var endtimeSplitArray = $('#store_time_end').val().split(':');
+		
+		
+		if(starttimeSplitArray[0].length == 2)
+		{
+		  store_time_S = $('#store_time_start').val().toString();
+		  
+		}
+		else
+		{
+			 store_time_S = '0' + $('#store_time_start').val().toString();
+			 $('#store_time_start').val(store_time_S);
+		}
+
+		
+		if(endtimeSplitArray[0].length == 2)
+		{
+		  store_time_E = $('#store_time_end').val().toString();
+		 
+		}
+		else
+		{
+			 store_time_E = '0' + $('#store_time_end').val().toString();
+			 $('#store_time_end').val(store_time_E);
+		}
+
+
+		
+		/*START
 		//check if substring is less than 10 OR ((if not float is integer) and (not numeric))
 		 if($('#store_time_start').val().substring(0, 2) < 10 || (Math.floor($('#store_time_start').val().substring(0, 2)) != $('#store_time_start').val().substring(0, 2) && $.isNumeric($('#store_time_start').val().substring(0, 2)) == false))
 		 {
@@ -115,9 +142,9 @@ function addZeroOnBeginningOfTime()
 		 {
 			store_time_S = $('#store_time_start').val().toString();
 		 }
-
+		*/
 		 
-		 /*END*/
+		 /*END
 		 if($('#store_time_end').val().substring(0, 2) < 10 || (Math.floor($('#store_time_end').val().substring(0, 2)) != $('#store_time_end').val().substring(0, 2) && $.isNumeric($('#store_time_end').val().substring(0, 2)) == false))
 		 {
 			  store_time_E = '0' + $('#store_time_end').val().toString();
@@ -126,7 +153,7 @@ function addZeroOnBeginningOfTime()
 		 else
 		 {
 			  store_time_E = $('#store_time_end').val().toString();
-		 }
+		 }*/
 	}
 }
 	function storeOpenDurationDisplayUpdater()
