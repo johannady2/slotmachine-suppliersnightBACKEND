@@ -35,8 +35,12 @@ else
 	$interval = date_diff($date_a,$date_b);
 
 	$time_open_duration =  $interval->format('<b> %a </b> Day(s) <b> %h  </b> hour(s) <b> %i  </b> minute(s) <b> %s </b> second(s)');
-	echo $time_open_duration;
-/*
+	
+	
+
+	
+	
+
 $time_open_duration_DAYS =  $interval->format('%a');
 $time_open_duration_HOURS =  $interval->format('%h');
 $time_open_duration_MINUTES =  $interval->format('%i');
@@ -44,6 +48,7 @@ $time_open_duration_SECONDS =  $interval->format('%s');
 
 $total_seconds = $time_open_duration_SECONDS + ($time_open_duration_MINUTES * 60) + ($time_open_duration_HOURS * 60 * 60) + ($time_open_duration_DAYS * 24 * 60 * 60);
 
-echo $total_seconds;
-*/
+
+echo $time_open_duration.'<input type="hidden" value="'.$total_seconds.'" name="playable_duration"/>';
+
 ?>
