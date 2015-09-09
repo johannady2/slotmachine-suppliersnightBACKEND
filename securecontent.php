@@ -118,7 +118,7 @@ $wins_left = $row['wins_left'];
 	</tr>
 	<tr>
 		<td>
-			<label for="wins_left" class="admin_field_label">Win Times For Duration:</label>
+			<label for="wins_left" class="admin_field_label">Wins Left:</label>
 		</td>
 		<td>
 			<input type="text" id="wins_left" class="admin_input_text" name="wins_left" value="<?php echo $wins_left;?>"/>
