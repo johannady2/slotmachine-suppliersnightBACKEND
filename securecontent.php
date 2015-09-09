@@ -38,6 +38,7 @@ $playable_duration = $row["playable_duration"];
 $playable_times =  $row["playable_times"];
 $plays_left = $row['plays_left'];
 $max_win_times_per_duration = $row['max_win_times_per_duration'];
+$wins_left = $row['wins_left'];
 ?>
 <h3 class="plagelabel">Preferences:</h3>
 <form id="preferences_form">
@@ -113,6 +114,14 @@ $max_win_times_per_duration = $row['max_win_times_per_duration'];
 		</td>
 		<td>
 			<input type="text" id="max_win_times_per_duration" class="admin_input_text" name="max_win_times_per_duration" value="<?php echo $max_win_times_per_duration;?>"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label for="wins_left" class="admin_field_label">Win Times For Duration:</label>
+		</td>
+		<td>
+			<input type="text" id="wins_left" class="admin_input_text" name="wins_left" value="<?php echo $wins_left;?>"/>
 		</td>
 	</tr>
 	<tr class="playableduration-field-container">
