@@ -12,7 +12,15 @@ if( isset($_SESSION['enteredenddatetime']))
 }
 $result = $pdo->prepare("SELECT * FROM lucky8_admin_preference;");
 $result->execute();
+
+/*
+while ($row = $result->fetch(PDO::FETCH_ASSOC))
+{
+	echo 'test'.$row['store_datetime_start'].'test2';
+}
+*/
 $row = $result->fetch();
+
 
 $store_date_start = date('Y-m-d', strtotime($row["store_datetime_start"]));
 $store_time_start =  date('G:i:s', strtotime($row["store_datetime_start"]));
@@ -28,11 +36,7 @@ else
 }
 $playable_duration = $row["playable_duration"];
 $playable_times =  $row["playable_times"];
-/*while ($row = $result->fetch(PDO::FETCH_ASSOC))
-{
-	echo $row['store_time_start'];
-}*/
-
+$max_win_times_per_duration = $row['max_win_times_per_duration'];
 ?>
 <h3 class="plagelabel">Preferences:</h3>
 <form id="preferences_form">
@@ -92,6 +96,14 @@ $playable_times =  $row["playable_times"];
 		</td>
 		<td>
 			<input type="text" id="playable_times" class="admin_input_text" name="playable_times" value="<?php echo $playable_times; ?>"/>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<label for="max_win_times_per_duration" class="admin_field_label">Win Times For Duration:</label>
+		</td>
+		<td>
+			<input type="text" id="max_win_times_per_duration" class="admin_input_text" name="max_win_times_per_duration" value="<?php echo $max_win_times_per_duration;?>"/>
 		</td>
 	</tr>
 	<tr class="playableduration-field-container">
