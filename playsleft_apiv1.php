@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 error_reporting(E_ALL & ~E_NOTICE); ini_set('display_errors', '1'); 
 include_once 'connect.php';
 /*IMPORTANT: THIS API is designed to only retrieve one row..*/
-$result = $pdo->prepare("SELECT plays_left FROM lucky8_admin_preference;");
+$result = $pdo->prepare("SELECT plays_left,wins_left FROM lucky8_admin_preference;");
 $result->execute();
 while ($row = $result->fetch(PDO::FETCH_ASSOC))
 {
