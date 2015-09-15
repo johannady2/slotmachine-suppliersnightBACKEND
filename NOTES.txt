@@ -20,7 +20,7 @@ CREATE TABLE "grand_prize"(id_grandprize INTEGER  PRIMARY KEY AUTOINCREMENT,name
    } else {
       echo "Opened database successfully\n";
    }
-?>
+?> sadaasdadad
 
 
 
